@@ -8,10 +8,10 @@ wget -c -O ./data/nuscenes/v1.0-trainval_meta.tgz 'https://s3.ap-southeast-1.ama
 wget -c -O ./data/nuscenes/v1.0-trainval01_keyframes.tgz 'https://s3.amazonaws.com/data.nuscenes.org/public/v1.0/v1.0-trainval01_keyframes.tgz?AWSAccessKeyId=AKIA6RIK4RRMFUKM7AM2&Signature=VwbzWmBWeQ26nvd85q%2Bx2vR6P4A%3D&Expires=1655705939'
 wget -c -O ./data/nuscenes/v1.0-trainval01_blobs_lidar.tgz 'https://s3.amazonaws.com/data.nuscenes.org/public/v1.0/v1.0-trainval01_blobs_lidar.tgz?AWSAccessKeyId=AKIA6RIK4RRMFUKM7AM2&Signature=zFNqGhTAZ7QtV2r7BMTa5dY%2B6%2BA%3D&Expires=1655706008'
 
-cd ./data/nuscenes
-tar zxvf v1.0-trainval01_blobs_lidar.tgz > /dev/null 
-tar zxvf v1.0-trainval01_keyframes.tgz > /dev/null
-tar zxvf v1.0-trainval_meta.tgz > /dev/null
+# cd ./data/nuscenes
+tar zxvf v1.0-trainval01_blobs_lidar.tgz -C ./data/nuscenes > /dev/null 
+tar zxvf v1.0-trainval01_keyframes.tgz -C ./data/nuscenes > /dev/null
+tar zxvf v1.0-trainval_meta.tgz -C ./data/nuscenes > /dev/null
 rm v1.0-trainval01_blobs_lidar.tgz v1.0-trainval01_keyframes.tgz v1.0-trainval_meta.tgz
 
 
@@ -33,22 +33,47 @@ wget -c -O ./data/nuscenes/v1.0-trainval10_blobs.tgz 'https://s3.ap-southeast-1.
 wget -c -O ./data/nuscenes/v1.0-test_meta.tgz 'https://s3.ap-southeast-1.amazonaws.com/asia.data.nuscenes.org/public/v1.0/v1.0-test_meta.tgz?AWSAccessKeyId=AKIA6RIK4RRMFUKM7AM2&Signature=cqqbYYuoRLKRxgyy6D0YsfgWTBg%3D&Expires=1655736130'
 wget -c -O ./data/nuscenes/v1.0-test_blobs.tgz 'https://s3.ap-southeast-1.amazonaws.com/asia.data.nuscenes.org/public/v1.0/v1.0-test_blobs.tgz?AWSAccessKeyId=AKIA6RIK4RRMFUKM7AM2&Signature=MpVlA0esWBowcU9EF6HFt1yehi8%3D&Expires=1655736194'
 
-cd ./data/nuscenes
+# cd ./data/nuscenes
 
 # unzip 
 tar zxvf v1.0-trainval_meta.tgz > /dev/null
-tar zxvf v1.0-trainval01_blobs.tgz > /dev/null
-tar zxvf v1.0-trainval02_blobs.tgz > /dev/null
-tar zxvf v1.0-trainval03_blobs.tgz > /dev/null
-tar zxvf v1.0-trainval04_blobs.tgz > /dev/null
-tar zxvf v1.0-trainval05_blobs.tgz > /dev/null
-tar zxvf v1.0-trainval06_blobs.tgz > /dev/null
-tar zxvf v1.0-trainval07_blobs.tgz > /dev/null
-tar zxvf v1.0-trainval08_blobs.tgz > /dev/null
-tar zxvf v1.0-trainval09_blobs.tgz > /dev/null
-tar zxvf v1.0-trainval10_blobs.tgz > /dev/null
+ && rm v1.0-trainval_meta.tgz
 
-tar zxvf v1.0-test_meta.tgz > /dev/null
-tar zxvf v1.0-test_blobs.tgz > /dev/null
+tar zxvf v1.0-trainval01_blobs.tgz -C ./data/nuscenes > /dev/null
+ && rm v1.0-trainval01_blobs.tgz
+
+tar zxvf v1.0-trainval02_blobs.tgz -C ./data/nuscenes > /dev/null
+ && rm v1.0-trainval02_blobs.tgz
+
+tar zxvf v1.0-trainval03_blobs.tgz -C ./data/nuscenes > /dev/null
+ && rm v1.0-trainval03_blobs.tgz
+
+tar zxvf v1.0-trainval04_blobs.tgz -C ./data/nuscenes > /dev/null
+ && rm v1.0-trainval04_blobs.tgz
+
+tar zxvf v1.0-trainval05_blobs.tgz -C ./data/nuscenes > /dev/null
+ && rm v1.0-trainval05_blobs.tgz
+
+tar zxvf v1.0-trainval06_blobs.tgz -C ./data/nuscenes > /dev/null
+ && rm v1.0-trainval06_blobs.tgz
+
+tar zxvf v1.0-trainval07_blobs.tgz -C ./data/nuscenes > /dev/null
+ && rm v1.0-trainval07_blobs.tgz
+
+tar zxvf v1.0-trainval08_blobs.tgz -C ./data/nuscenes > /dev/null
+ && rm v1.0-trainval08_blobs.tgz
+
+tar zxvf v1.0-trainval09_blobs.tgz -C ./data/nuscenes > /dev/null
+ && rm v1.0-trainval09_blobs.tgz
+
+tar zxvf v1.0-trainval10_blobs.tgz -C ./data/nuscenes > /dev/null
+ && rm v1.0-trainval10_blobs.tgz
+
+
+tar zxvf v1.0-test_meta.tgz -C ./data/nuscenes > /dev/null
+ && rm  v1.0-test_meta.tgz
+
+tar zxvf v1.0-test_blobs.tgz -C ./data/nuscenes > /dev/null
+ && rm v1.0-test_blobs.tgz
 !
-cd ../..
+# cd ../..
